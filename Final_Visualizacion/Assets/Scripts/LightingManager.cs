@@ -10,13 +10,14 @@ public class LightingManager : MonoBehaviour
 
     [SerializeField, Range(0, 24)] private float timeOfDay;
 
+    public AnimationManager am;
     private void Update()
     {
         if(preset == null)
         {
             return;
         }
-        if (Application.isPlaying)
+        if (Application.isPlaying && am.dayCycle == true)
         {
             timeOfDay += Time.deltaTime;
             timeOfDay %= 12;
@@ -37,7 +38,7 @@ public class LightingManager : MonoBehaviour
         {
             directionalLight.color = preset.DirectionalColor.Evaluate(timePercent);
 
-            directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 170f, 0));
+            directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * -360f) - 90f, 170f, 0));
         }
     }
 
