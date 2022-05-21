@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AnimationManager : MonoBehaviour
 {
+    [Header("Animators")]
     [SerializeField] Animator seedAnim;
     [SerializeField] Animator waterAnim;
     [SerializeField] Animator growAnim;
@@ -16,25 +17,19 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] Animator hoursAnim;
     [SerializeField] Animator fadeAnim;
 
+    [Header("GameObjects")]
     [SerializeField] GameObject seedObject;
     [SerializeField] GameObject growingPlantObject;
     [SerializeField] GameObject peachObject;
     [SerializeField] GameObject maturePlantObject;
+    [SerializeField] GameObject WateringCanObject;
+
+
+    [Space]
 
     public Image fadeImage;
-
     public bool dayCycle;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public ParticleSystem waterVFX;
 
     public void seedAnimation()
     {
@@ -43,7 +38,8 @@ public class AnimationManager : MonoBehaviour
     public void regarAnimation()
     {
         seedObject.SetActive(false);
-        waterAnim.SetBool("Regar", true);
+        //WateringCanObject.SetActive(true);
+        StartCoroutine(Regadera());
     }
     public void ventanaAnimation()
     {
@@ -76,6 +72,16 @@ public class AnimationManager : MonoBehaviour
         maturePlantObject.SetActive(true);
         yield return new WaitForSeconds(2f);
         fadeImage.gameObject.SetActive(false);
+    }
+
+    IEnumerator Regadera()
+    {
+        waterAnim.SetBool("PopIn", true);
+        yield return new WaitForSeconds(1f);
+        waterAnim.SetBool("Regar", true);
+        waterVFX.Play();
+        yield return new WaitForSeconds(3f);
+        waterAnim.SetBool("PopOut", true);
     }
 
 }

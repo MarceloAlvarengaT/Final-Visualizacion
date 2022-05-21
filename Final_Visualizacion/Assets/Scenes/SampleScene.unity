@@ -808,6 +808,7 @@ MonoBehaviour:
   maturePlantObject: {fileID: 1217106092}
   fadeImage: {fileID: 876290787}
   dayCycle: 0
+  waterVFX: {fileID: 0}
 --- !u!4 &569245589
 Transform:
   m_ObjectHideFlags: 0
@@ -1508,6 +1509,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1994052922071874041, guid: c736add45ff72654dbc7b526011b0cd0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.796
+      objectReference: {fileID: 0}
+    - target: {fileID: -1994052922071874041, guid: c736add45ff72654dbc7b526011b0cd0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.073
+      objectReference: {fileID: 0}
+    - target: {fileID: -1994052922071874041, guid: c736add45ff72654dbc7b526011b0cd0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.914
+      objectReference: {fileID: 0}
+    - target: {fileID: -1994052922071874041, guid: c736add45ff72654dbc7b526011b0cd0, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
@@ -1710,6 +1723,10 @@ PrefabInstance:
     - target: {fileID: 1954308767203186417, guid: c736add45ff72654dbc7b526011b0cd0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310030923331328106, guid: c736add45ff72654dbc7b526011b0cd0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2751041565445292442, guid: c736add45ff72654dbc7b526011b0cd0, type: 3}
       propertyPath: m_LocalRotation.w
