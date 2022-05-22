@@ -24,8 +24,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Sensitivity: 0
-    - _Smooth: 0
+    - _Sensitivity: 0.067
+    - _Smooth: 0.082
     m_Colors:
-    - _MaskCol: {r: 1, g: 1, b: 1, a: 1}
+    - _MaskCol: {r: 0.7019608, g: 0.96470594, b: 0.627451, a: 1}
   m_BuildTextureStacks: []
