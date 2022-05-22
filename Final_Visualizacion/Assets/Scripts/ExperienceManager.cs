@@ -10,6 +10,7 @@ public class ExperienceManager : MonoBehaviour
     [SerializeField] private GameObject sowSeed;
     [SerializeField] private GameObject watering;
     [SerializeField] private GameObject passTime;
+    [SerializeField] private GameObject growPlant;
     [SerializeField] private GameObject sunMinigame;
     [SerializeField] private GameObject beeAnimation;
     [SerializeField] private Button fruitGrow;
@@ -17,9 +18,9 @@ public class ExperienceManager : MonoBehaviour
     private bool sowSeedB = false;
     private bool wateringB = false;
     private bool passtimeB = false;
-    private bool sowSeedB2 = false;
     private bool wateringB2 = false;
-    private bool growPlantB= false;
+    private bool growPlantB = false;
+    public bool FotosinteB = false;
     private void Start()
     {
         if (Instance != null && Instance != this)
@@ -42,40 +43,39 @@ public class ExperienceManager : MonoBehaviour
     {
         if (!sowSeedB && !wateringB && !passtimeB)
         {
-            sowSeed.gameObject.SetActive(true);
+            sowSeed.SetActive(true);
         }
         else if (sowSeedB && !wateringB && !passtimeB)
         {
-            watering.gameObject.SetActive(true);
+            watering.SetActive(true);
         }
         else if (sowSeedB && wateringB && !passtimeB)
         {
-            passTime.gameObject.SetActive(true);
+            passTime.SetActive(true);
         }
         else
         {
-            sunMinigame.SetActive(true);
+            GrowPlantFlow();
         }
     }
 
     public void GrowPlantFlow()
     {
-        if (!sowSeedB2 && !wateringB2 && !growPlantB)
+
+        if ( !wateringB2 && !growPlantB && !FotosinteB)
         {
-            sowSeed.gameObject.SetActive(true);
+            watering.SetActive(true);
         }
-        else if (sowSeedB && !wateringB && !passtimeB)
-        {
-            watering.gameObject.SetActive(true);
-        }
-        else if (sowSeedB && wateringB && !passtimeB)
-        {
-            passTime.gameObject.SetActive(true);
-        }
-        else
+        else if (wateringB2 && !growPlantB && !FotosinteB)
         {
             sunMinigame.SetActive(true);
         }
+        else if (wateringB2 && !growPlantB && FotosinteB)
+        {
+            sunMinigame.SetActive(false);
+            growPlant.SetActive(true);
+        }
+
     }
 
 }

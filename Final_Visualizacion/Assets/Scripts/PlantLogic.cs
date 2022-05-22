@@ -29,7 +29,7 @@ public class PlantLogic : MonoBehaviour
         sunCount += 1;
         if (sunCount == neededSun)
         {
-            Debug.Log("Fotosintesis");
+            ExperienceManager.Instance.FotosinteB = true;
         }
     }
 
