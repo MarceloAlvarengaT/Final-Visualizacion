@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AnimationManager : MonoBehaviour
 {
+    public static AnimationManager Instance;
     [Header("Animators")]
     [SerializeField] Animator seedAnim;
     [SerializeField] Animator waterAnim;
@@ -31,6 +32,24 @@ public class AnimationManager : MonoBehaviour
     public bool dayCycle;
     public ParticleSystem waterVFX;
 
+    private void Start()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
+    private void OnDisable()
+    {
+        Instance = null;
+    }
+
+
     public void seedAnimation()
     {
         seedAnim.SetBool("Plantar", true);
@@ -38,7 +57,6 @@ public class AnimationManager : MonoBehaviour
     public void regarAnimation()
     {
         seedObject.SetActive(false);
-        //WateringCanObject.SetActive(true);
         StartCoroutine(Regadera());
     }
     public void ventanaAnimation()
@@ -82,6 +100,13 @@ public class AnimationManager : MonoBehaviour
         waterVFX.Play();
         yield return new WaitForSeconds(3f);
         waterAnim.SetBool("PopOut", true);
+
+        yield return new WaitForSeconds(3f);
+        waterAnim.SetBool("PopIn", false);
+        waterAnim.SetBool("Regar", false);
+        waterAnim.SetBool("PopOut", false);
+
+
     }
 
 }
