@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: dbe94c262b1132b4d90a1b3df7db1550
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - WigendaTypewrite
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 74f9375bfed5572428659e5001a7a170, type: 3}
+  - {fileID: 12800000, guid: 2a94c9a2f506218408d7e6f8ea9b5a9e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

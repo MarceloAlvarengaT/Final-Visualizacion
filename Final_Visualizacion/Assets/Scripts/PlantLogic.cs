@@ -30,6 +30,7 @@ public class PlantLogic : MonoBehaviour
         if (sunCount == neededSun)
         {
             ExperienceManager.Instance.FotosinteB = true;
+            ExperienceManager.Instance.GrowPlantFlow();
         }
     }
 
